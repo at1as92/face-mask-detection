@@ -3,7 +3,7 @@
 ## Introduction
 This repository contains the code used for NP's Specialist Diploma in Robotics Engineering Computer Vision and Deep Learning mini project.
 
-This mini project requires a CNN-based model to be built to detect if humans are wearing face masks in a real-time video stream. Green and red bounding boxes, along with the corresponding labels and confidence scores shall be drawn to indicate with and without mask respectively.
+This mini project requires a CNN-based model to be built to detect if humans are wearing face masks in a real-time video stream. Green and red bounding boxes, along with the corresponding labels and confidence scores shall be drawn to indicate with and without mask respectively. A sample of the dataset provided can be found [here](https://github.com/at1as92/face-mask-detection/tree/main/Mask%20Detection%20Training/Sample%20Images).
 
 ## Face Detection
 Experimented with 3 different models to evaluate and select an optimal face detector model. Evaluation was performed against Fold #1 (291 images) of the Face Detection Data Set and Benchmark ([FDDB](https://vis-www.cs.umass.edu/fddb/)) using the COCO metrics. Ground truth labels were converted from elliptical to rectangular bounding boxes to facilitate evaluation. Time taken to process images was taken as proxy of computation requirements for each face detector. 
@@ -47,11 +47,18 @@ Classification report generated to analyse classifer performance against unseen 
 |With Mask   | 0.988 | 0.988 | 0.988 |
 |Accuracy    | -     | -     | 0.987 |
 
-
 All code for this section can be found in [Mask Detection Training](https://github.com/at1as92/face-mask-detection/tree/main/Mask%20Detection%20Training)
 
-## Evaluation of Face Detector & Mask-No Mask Classifier
+## Evaluation of Overall Mask Detector Model
+Again, COCO metrics was used to evaluate the combined face detector & mask classifier models. The YOLOv5 Face with Resnet50V2 transfer learning model performed better the Sequential model. First 100 images of the dataset for [Kaggle](https://www.kaggle.com/datasets/andrewmvd/face-mask-detection) was used in the evaluation.
 
+All code for this section can be found in [Mask Detection Evaluation](https://github.com/at1as92/face-mask-detection/tree/main/Mask%20Detection%20Evaluation).  
+
+## Real-Time Mask Detection on Video
+Implemented on detect_mask_camera.py to produce the sample video. 
+
+## Mask Detection Model Inference on Video
+Original Video from [CNA Youtube](https://www.youtube.com/watch?v=XN8hVmzuA5Q)
 
 https://github.com/at1as92/face-mask-detection/assets/62200772/28a4c8cc-27e5-4f97-865d-7e3582b83af2
 
